@@ -1,0 +1,25 @@
+before we get to the nitty-gritty of doing a speech recognition and python it's a good moment to talk about how a speech recognition works
+a full discussion will fill a book so I won't bore you with all of that thing nickel details here
+in fact the section is not a prerequisite to the rest of the tutorial
+if you like to get a straight to the point then feel free to skip ahead
+the speech recognition has its roots in research done at Bell labs in the early 1950s
+early systems were limited to a single speaker and had limited vocabulary of about 1000 words
+Monterey speech recognition systems have come a long way since their ancient counterparts
+they can recognize speech from multiple speakers and 1/2 normal vocabularies in numerous languages
+the first component of the speech recognition is of course the speech the speech must be converted from physical sound to an electrical signal with a microphone and then to a Digital Data with analog to digital converter
+was digitized several models can be used to transcribe the audio to text
+most modern speech recognition systems relied on what is known as a heated Markov model
+this approach works on the assumption that is speech signal when viewed on a short enough time scale can be reasonably approximated as a stationary process that is a process in which statistical properties do not change over time
+any typical keto Marco's tomorrow the speech signal is divided into 10 millisecond fragments
+the power spectrum of each fragment which is essentially a plot of the signals power as a function of frequency is mapped to a vector of real numbers known as caps Trull coefficients
+the dimension of this Vector is usually small sometimes as low as 10 although more accurate systems may have Dimension 32 or more
+the final output of the Hidden Markov model is a sequence of these vectors
+to decode the speech into text groups of vectors are matched to one or more phonemes a fundamental unit of speech
+this calculation requires training since the sound of a phoneme varies from speaker to speaker and even varies from one address to another by the same speaker
+Especial algorithm is then applied to determine the most likely words that produce the given sequence of phonemes
+one can imagine that this whole process may be computationally expensive
+in many modern speech recognition systems neural networks are used to simplify the speech signal using techniques for feature transformation and dimensionality reduction before hidden Markov model recognition
+voice activity detectors are also used to reduce an audio signal to only the portions that are likely to contain speech
+this prevents organizer from wasting time analyzing unnecessary parts of the signal
+fortunately as a python programmer you don't have to worry about any of this
+a number of speech recognition services are available for use online through an API and many of these services offer python SDK

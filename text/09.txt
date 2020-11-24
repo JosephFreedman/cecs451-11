@@ -1,0 +1,25 @@
+before we get to the nitty-gritty of do speech recognition in Python let's take a moment to talk about how speech recognition works
+a full discussion with Philip books I won't bore you with all the technical details here
+in fact the section is not prerequisite to the rest of the tutorial
+if you'd like to get straight to the point then feel free to skip ahead
+speech recognition has its roots in research done at Bell labs in the early 1950s
+early systems are limited to a single speaker and had limited vocabulary about a thousand words
+modern speech recognition systems have come a long way since their ancient counterparts
+they can recognize speech from multiple speakers and have an enormous vocabularies and numerous languages
+the first component of speech recognition is a course speech speech must be converted from physical sound to an electrical signal with a microphone and then to Digital Data with an analog to digital converter
+once digitized several models can be used to transcribe the audio to text
+most modern speech recognition systems rely on what is known as a hidden Markov model
+This Modern approach works on the assumption that a speech signal when viewed on a short enough time scale can be reasonably approximated as a stationary process that is a process in which statistical properties do not change over time
+in a typical hidden Markov model the speech signal is divided into 10 millisecond fragments
+the power spectrum of each fragment which is essentially a plot of the signals power as a function of frequency is mapped to a vector of real numbers known as capstraw coefficients
+the dimension of this Vector is usually small sometimes as low as 10 although more accurate systems may have Dimension 32 or more
+the final output of the Hidden Markov model is a sequence of these vectors
+to decode the speech into text groups are vectors are matched to one or more phonemes a fundamental unit of speech
+this calculation requires training
+special algorithm
+one can imagine that the whole process may be computationally expensive
+many modern speech recognition system
+voice activity detectors are also used to reduce an audio signal to clean the portions that are likely to be the same speed
+this prevents the recognizer from wasting time analyzing unnecessary parts of the signal
+fortunately as a python programmer you don't have to worry about any of this
+the number of speech recognition services are available for use online through an API services offer python sdks
